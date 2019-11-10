@@ -273,6 +273,7 @@ let
                 rm $out/bin/rustc
                 cp $RUSTC_PATH $out/bin/rustc
                 wrapProgram $out/bin/rustc --prefix PATH : ${super.lib.makeBinPath [stdenv.cc]}
+                wrapProgram $out/bin/cargo --prefix PATH : ${super.lib.makeBinPath [stdenv.cc]}
               fi
             '';
 
